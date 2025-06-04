@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Mumbai</title>
+  <link rel="stylesheet" href="pune.css" />
+  <style>
+    .horizontal-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 0 20px;
+    }
+    .horizontal-scroll .card {
+      min-width: 300px;
+      flex-shrink: 0;
+    }
+    .hero {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+    }
+    .direction-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .direction-box select,
+    .direction-box button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .direction-box button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .direction-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-image">
+      <img src="https://apparelresources.com/wp-content/uploads/2019/02/Retail-Hub-of-India.gif" alt="Mumbai Skyline">
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to Mumbai</h1>
+      <p>The City of Dreams</p>
+    </div>
+  </header>
+
+  <!-- Hotels Section -->
+  <section id="hotels">
+    <h2>Top Hotels in Mumbai</h2>
+    <div class="card-grid horizontal-scroll">
+      <!-- Hotel cards go here -->
+    </div>
+  </section>
+
+  <!-- Restaurants Section -->
+  <section id="restaurants">
+    <h2>Popular Restaurants in Mumbai</h2>
+    <div class="card-grid horizontal-scroll">
+      <!-- Restaurant cards go here -->
+    </div>
+  </section>
+
+  <!-- Sites Section -->
+  <section id="sites">
+    <h2>Popular Sites in Mumbai</h2>
+    <div class="card-grid horizontal-scroll">
+      <!-- Site cards go here -->
+    </div>
+  </section>
+
+  <!-- Weather Section -->
+  <section id="weather">
+    <h2>Current Weather in Mumbai</h2>
+    <p><strong>Temperature:</strong> 32°C</p>
+    <p><strong>Condition:</strong> Sunny</p>
+    <p><strong>Humidity:</strong> 58%</p>
+    <p><strong>Wind:</strong> 12 km/h</p>
+  </section>
+
+  <!-- Visitor Reviews -->
+  <section id="reviews">
+    <h2>What Visitors Say</h2>
+    <div class="review-card">
+      <p>"Mumbai is so vibrant and full of life! Loved the street food and the cultural vibe!" – Asha R.</p>
+    </div>
+    <div class="review-card">
+      <p>"Had a great time at Marine Drive and Colaba. Definitely coming back." – Rohan M.</p>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section id="events">
+    <h2>Upcoming Events in Mumbai</h2>
+    <ul>
+      <li><strong>Mumbai Film Festival:</strong> April 15–20</li>
+      <li><strong>Gudi Padwa Celebrations:</strong> April 11</li>
+      <li><strong>Music in the Park:</strong> Every Sunday</li>
+    </ul>
+  </section>
+
+  <!-- Directions Section -->
+  <section id="directions">
+    <h2 style="text-align: center;">Get Directions</h2>
+    <div class="direction-box">
+      <label for="locationSelect">Choose a destination:</label>
+      <select id="locationSelect">
+        <option value="">-- Select --</option>
+        <option value="https://www.google.com/maps/dir//JW+Marriott+Hotel+Pune">JW Marriott Pune</option>
+        <option value="https://www.google.com/maps/dir//Conrad+Pune">Conrad Pune</option>
+        <option value="https://www.google.com/maps/dir//The+Westin+Pune+Koregaon+Park">The Westin Koregaon Park</option>
+        <option value="https://www.google.com/maps/dir//Vaishali+Restaurant+Pune">Vaishali</option>
+        <option value="https://www.google.com/maps/dir//Sujata+Mastani+Sadashiv+Peth+Pune">Sujata Mastani</option>
+        <option value="https://www.google.com/maps/dir//Shizusan+Viman+Nagar+Pune">Shizusan</option>
+        <option value="https://www.google.com/maps/dir//Shaniwar+Wada+Pune">Shaniwar Wada</option>
+        <option value="https://www.google.com/maps/dir//Dagdusheth+Ganpati+Temple+Pune">Dagdusheth Temple</option>
+        <option value="https://www.google.com/maps/dir//Sinhagad+Fort+Pune">Sinhagad Fort</option>
+      </select>
+      <button onclick="openDirections()">Get Directions</button>
+    </div>
+  </section>
+
+  <script>
+    function openDirections() {
+      const selected = document.getElementById('locationSelect').value;
+      if (selected) {
+        window.open(selected, '_blank');
+      } else {
+        alert('Please select a destination!');
+      }
+    }
+  </script>
+
+  <!-- Location Map Section -->
+  <section id="location">
+    <h2>Mumbai Location Map</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609829612!2d72.74109819347446!3d19.08219783943805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63de60b893f%3A0x4be12918d1e7f7ef!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1642920818284!5m2!1sen!2sin" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+</body>
+</html>
