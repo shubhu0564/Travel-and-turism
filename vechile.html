@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .section {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    select, button {
+      padding: 0.5rem;
+      margin: 1rem 0;
+      width: 100%;
+      font-size: 1rem;
+    }
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #e0f7fa;
+      border: 1px solid #00acc1;
+      border-radius: 8px;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Plan Your Trip</h1>
+  <div class="section">
+    <label for="from">From:</label>
+    <select id="from">
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Nagpur">Nagpur</option>
+      <option value="Nashik">Nashik</option>
+      <option value="Shambajinagar">Shambajinagar</option>
+    </select>
+
+    <label for="to">To:</label>
+    <select id="to">
+      <option value="Mumbai">Mumbai</option>
+      <option value="Pune">Pune</option>
+      <option value="Nagpur">Nagpur</option>
+      <option value="Nashik">Nashik</option>
+      <option value="Shambajinagar">Shambajinagar</option>
+    </select>
+
+    <button onclick="suggestVehicle()">Get Travel Info</button>
+
+    <div class="result" id="result"></div>
+
+    <iframe id="mapFrame" src=""></iframe>
+  </div>
+
+  <script>
+    const vehicleSuggestions = {
+      "Pune-Mumbai": { vehicle: "Car / Train", distance: 150 },
+      "Mumbai-Nagpur": { vehicle: "Flight / Train", distance: 820 },
+      "Pune-Nashik": { vehicle: "Bus / Car", distance: 210 },
+      "Nagpur-Shambajinagar": { vehicle: "Car / Train", distance: 480 },
+      "Mumbai-Nashik": { vehicle: "Bus / Train", distance: 165 },
+      "Nashik-Shambajinagar": { vehicle: "Car / Bus", distance: 230 }
+    };
+
+    const costPerKm = {
+      Car: 12,
+      Bus: 8,
+      Train: 3,
+      Flight: 5
+    };
+
+    function suggestVehicle() {
+      const from = document.getElementById("from").value;
+      const to = document.getElementById("to").value;
+      const key1 = `${from}-${to}`;
+      const key2 = `${to}-${from}`;
+      const resultDiv = document.getElementById("result");
+      const mapFrame = document.getElementById("mapFrame");
+
+      if (from === to) {
+        resultDiv.innerHTML = "<strong>Select different locations.</strong>";
+        mapFrame.src = "";
+        return;
+      }
+
+      const route = vehicleSuggestions[key1] || vehicleSuggestions[key2];
+
+      if (!route) {
+        resultDiv.innerHTML = "Route not found.";
+        mapFrame.src = "";
+        return;
+      }
+
+      const vehicleText = route.vehicle;
+      const distance = route.distance;
+      const vehicles = vehicleText.split(" / ");
+
+      let costEstimateHTML = "<ul>";
+      vehicles.forEach(v => {
+        const clean = v.trim();
+        const cost = costPerKm[clean] ? distance * costPerKm[clean] : "N/A";
+        costEstimateHTML += `<li><strong>${clean}</strong>: ₹${cost}</li>`;
+      });
+      costEstimateHTML += "</ul>";
+
+      resultDiv.innerHTML = `
+        <strong>From:</strong> ${from} <br/>
+        <strong>To:</strong> ${to} <br/>
+        <strong>Distance:</strong> ${distance} km <br/>
+        <strong>Suggested Vehicles:</strong> ${vehicleText} <br/>
+        <strong>Estimated Costs:</strong> ${costEstimateHTML}
+      `;
+
+      mapFrame.src = `https://www.google.com/maps?q=from+${from}+to+${to}&output=embed`;
+    }
+  </script>
+
+</body>
+</html>

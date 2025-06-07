@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Nagpur</title>
+  <link rel="stylesheet" href="pune.css" />
+  <style>
+    .horizontal-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 0 20px;
+    }
+    .horizontal-scroll .card {
+      min-width: 300px;
+      flex-shrink: 0;
+    }
+    .hero {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+    }
+    .direction-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .direction-box select,
+    .direction-box button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .direction-box button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .direction-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-image">
+      <img src="https://apparelresources.com/wp-content/uploads/2019/02/Retail-Hub-of-India.gif" alt="Mumbai Skyline">
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to Nagpur</h1>
+      <p>The City of Dreams</p>
+    </div>
+  </header>
+
+  <!-- Hotels Section -->
+  <section id="hotels">
+    <h2>Top Hotels in Nagpur</h2>
+    <div class="card-grid horizontal">
+      <div class="card">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipOIRmPU-_gW60VidIIcXBxDSpG5shMIq5r4Wj9V=w408-h272-k-no" alt="Le Meridien" />
+      <h3>Le Meridien</h3>
+      <p>Le Méridien Nagpur is a luxury hotel situated near MIHAN SEZ and the airport.</p> 
+      <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/jna1DwskkwBz95nN9" target="_blank">Wardha Road</a></p>
+      <p><strong>Rating:</strong> ★★★★★</p>
+      </div>
+      <div class="card">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipNgHMHPPyVMF2-Qwl1GNqSM_mQmpLx0iTPcrZ8F=s680-w680-h510" alt="St. Regis Mumbai" />
+      <h3>Radisson Blu Hotel</h3>
+      <p>Radisson Blu Hotel offers luxurious accommodations, fine dining, and exceptional service.</p>
+      <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/yG9du3CxsRBaC2Vu8" target="_blank"> Chatrapati Nagar</a></p>
+      <p><strong>Rating:</strong> ★★★★☆</p>
+      </div>
+      <div class="card">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/78/19/fa/ginger-nagpur-facade.jpg?w=600&h=600&s=1" alt="Ginger Nagpur" />
+      <h3>Ginger Nagpur</h3>
+      <p>​Ginger Nagpur Airport Road offers modern, lean luxe accommodations near the airport.</p>
+      <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/p5L95osUviaioKha9" target="_blank">Jai Prakash Nagar</a></p>
+      <p><strong>Rating:</strong> ★★★★★</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurants Section -->
+  <section id="restaurants">
+    <h2>Popular Restaurants in Nagpur</h2>
+    <div class="card-grid horizontal">
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/bb/16/51/majestic-masala.jpg?w=900&h=500&s=1" alt="Majestic Masala" />
+        <h3>Majestic Masala</h3>
+        <p>Majestic Masala transports you to the land of Maharaja where you taste the cuisine inspired by the regal kitchens of yore.</p>
+        <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/8dRScPWA8XhzNQwY9" target="_blank">Ramdaspeth</a></p>
+        <p><strong>Rating:</strong> ★★★★☆</p>
+      </div>
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/bb/1d/60/mint-leaf.jpg?w=900&h=500&s=1" alt="Mintleaf Restaurant" />
+        <h3>Mintleaf Restaurant</h3>
+        <p>Flavours of the World, interactive kitchen and a delightful culinary is what mint Leaf brings to the table..</p>
+        <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/6cML3Qqg4RuEiV5j7" target="_blank">Central Bazzar road</a></p>
+        <p><strong>Rating:</strong> ★★★★☆</p>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0HiN2etF2CFRM5A26h5kS0NECqFBTeyijdw&s" alt="Mamledar Misal" />
+        <h3>Pablo - The Art Cafe Lounge</h3>
+        <p>It is a vibrant fusion of culinary delights and artistic ambiance..</p>
+        <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/ggAEUqLVhbyYeYoa9" target="-blank">Civil lines</a></p>
+        <p><strong>Rating:</strong> ★★★★☆</p>
+      </div>
+    </div>
+  </section>
+<!-- Sites Section -->
+  <section id="sites">
+    <h2>Popular Sites in Mumbai</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/d9/4c/4b/photo4jpg.jpg?w=1400&h=-1&s=1" alt="Nagpur Ramtek Temple" />
+        <h3>Nagpur Ramtek Temple</h3>
+        <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/qq7WJ28Fm55N93Zz5" target="-blank">Ramtek</a></p>
+        <p>Ancient hilltop temple, serene surroundings, echoes of Lord Rama's legacy.</p>
+      </div>
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/0d/9c/46/sunset.jpg?w=1600&h=900&s=1" alt="Futala Lake" />
+        <h3>Futala Lake</h3>
+        <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/ku3yBxtg2SDYwVAY9" target="-blank"> Futala lake </a></p>
+        <p>Scenic lake with fountains, vibrant lights, perfect for evening strolls.</p>
+      </div>
+      <div class="card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/24/ee/8f/pench-tiger-safari.jpg?w=2400&h=1000&s=1" alt="Pench National Park" />
+        <h3>Pench National Park</h3>
+        <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/9CBYaFjLtwVkxxq36" target="-blank">Pench National Park</a></p>
+        <p>Lush forest sanctuary, majestic tigers roam amidst rich biodiversity.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Weather Section -->
+  <section id="weather">
+    <div class="weather-wrapper">
+      <div class="weather-box">
+        <h2>Current Weather in Nagpur</h2>
+        <p><strong>Temperature:</strong> <span id="temp">Loading...</span></p>
+        <p><strong>Condition:</strong> <span id="condition">Loading...</span></p>
+        <p><strong>Humidity:</strong> <span id="humidity">Loading...</span></p>
+        <p><strong>Wind:</strong> <span id="wind">Loading...</span></p>
+        <p id="time">Loading time...</p>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    const API_KEY = "9869f7e0d3a8dd7551158c97933354ea";
+    const CITY = "Nagpur";
+  
+    async function fetchWeather() {
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`
+        );
+        const data = await response.json();
+  
+        document.getElementById("temp").textContent = `${data.main.temp} °C`;
+        document.getElementById("condition").textContent = data.weather[0].main;
+        document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+        document.getElementById("wind").textContent = `${data.wind.speed} km/h`;
+  
+        updateTime();
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+        document.getElementById("temp").textContent = "Error loading data";
+      }
+    }
+  
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("time").textContent = `Updated at: ${now.toLocaleTimeString()}`;
+    }
+  
+    fetchWeather();
+    setInterval(fetchWeather, 600000);
+    setInterval(updateTime, 1000);
+  </script>
+  
+
+
+  <!-- Visitor Reviews -->
+  <section id="reviews-nagpur">
+    <h2>What Visitors Say About Nagpur</h2>
+    <div class="review-container">
+      <div class="review-card">
+        <p>“Nagpur surprised me with its greenery and peaceful vibes. The food scene is underrated!”</p>
+        <span class="review-author">– Kavita S.</span>
+      </div>
+      <div class="review-card">
+        <p>“Deekshabhoomi and Futala Lake were highlights of my trip. It’s a hidden gem in Maharashtra.”</p>
+        <span class="review-author">– Ankit J.</span>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Upcoming Events -->
+  <section id="events">
+    <h2>Upcoming Events in Nagpur</h2>
+    <div class="event-list">
+      <div class="event-card">
+        <strong>Orange City Literature Festival</strong>
+        <span>May 10–12</span>
+      </div>
+      <div class="event-card">
+        <strong>Mahavir Jayanti at Diksha Bhoomi</strong>
+        <span>April 21</span>
+      </div>
+      <div class="event-card">
+        <strong>Musical Fountain at Futala Lake</strong>
+        <span>Every Weekend Evening</span>
+      </div>
+      <div class="event-card">
+        <strong>Dragon Fruit Fest at Seminary Hills</strong>
+        <span>June 1–3</span>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Directions Section -->
+  <section id="directions">
+    <h2 style="text-align: center;">Get Directions</h2>
+    <div class="direction-box">
+      <label for="locationSelect">Choose a destination:</label>
+      <select id="locationSelect">
+        <option value="">-- Select --</option>
+        <option value="https://www.google.com/maps/dir//Le+Meridien+Nagpur">Le Meridien, Nagpur</option>
+        <option value="https://www.google.com/maps/dir//Radisson+Blu+Hotel+Nagpur">Radisson Blu Hotel</option>
+        <option value="https://www.google.com/maps/dir//Ginger+Hotel+Nagpur">Ginger Nagpur</option>
+        <option value="https://www.google.com/maps/dir//Majestic+Masala+Nagpur">Majestic Masala</option>
+        <option value="https://www.google.com/maps/dir//Mintleaf+Restaurant+Nagpur">Mintleaf Restaurant</option>
+        <option value="https://www.google.com/maps/dir//Pablo+-+The+Art+Cafe+Lounge+Nagpur">Pablo – The Art Cafe Lounge</option>
+        <option value="https://www.google.com/maps/dir//Ramtek+Temple+Nagpur">Ramtek Temple</option>
+        <option value="https://www.google.com/maps/dir//Futala+Lake+Nagpur">Futala Lake</option>
+        <option value="https://www.google.com/maps/dir//Pench+National+Park+Nagpur">Pench National Park</option>
+      </select>
+      
+      <button onclick="openDirections()">Get Directions</button>
+    </div>
+  </section>
+
+  <script>
+    function openDirections() {
+      const selected = document.getElementById('locationSelect').value;
+      if (selected) {
+        window.open(selected, '_blank');
+      } else {
+        alert('Please select a destination!');
+      }
+    }
+  </script>
+
+  <!-- Location Map Section -->
+  <section id="location">
+    <h2>Nagpur Location Map</h2>
+    <div class="map-container">
+      <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.728451349285!2d79.08815417498957!3d21.14580068352656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a8a3be645b%3A0x5de55c6d5d354875!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1713353138123!5m2!1sen!2sin" 
+  width="100%" 
+  height="300" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+  </section>
+
+</body>
+</html>
